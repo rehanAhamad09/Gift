@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Letter ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My Dearest Love 💌</h1>
+    <p class="love-text">
+        Every moment with you feels like a beautiful dream I never want to wake up from. 
+        You are my safe place, my greatest adventure, and my forever home. 
+        Your smile brightens my darkest days, and your laughter is the sweetest melody I know.
+    </p>
+    <img id="savedImage" style="display:none; border-radius:15px; width:250px; margin-top:20px;">
+    <a href="surprise.html" class="btn">Click for a Surprise 🎁</a>
+
+<script src="hearts.js"></script>
+<script src="music.js"></script>
+<script>
+    // Show saved image if available
+    const savedImg = localStorage.getItem("gfImage");
+    if(savedImg){
+        const img = document.getElementById("savedImage");
+        img.src = savedImg;
+        img.style.display = "block";
+    }
+</script>
+</body>
+</html>

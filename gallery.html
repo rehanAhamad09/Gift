@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Gallery 💕</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Upload Your Beautiful Picture 💖</h1>
+    <input type="file" id="imageUpload" accept="image/*">
+    <div id="preview"></div>
+    <a href="loveletter.html" class="btn">Read My Love Letter</a>
+
+<script>
+document.getElementById('imageUpload').addEventListener('change', function(){
+    const file = this.files[0];
+    if (file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+            localStorage.setItem("gfImage", e.target.result); // Save image
+            document.getElementById('preview').innerHTML = `<img src="${e.target.result}" alt="Uploaded">`;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+// Show saved image if already uploaded
+const savedImg = localStorage.getItem("gfImage");
+if(savedImg){
+    document.getElementById('preview').innerHTML = `<img src="${savedImg}" alt="Uploaded">`;
+}
+</script>
+<script src="hearts.js"></script>
+<script src="music.js"></script>
+</body>
+</html>
